@@ -68,6 +68,7 @@ void cheer()
 }
 
 string PrintNTable(int width, string s);
+void PrintingTable(TimeTable tt);
 
 void menu(int numeee);
 
@@ -125,43 +126,7 @@ int main()
             cin >> choice;
             if (choice == 1)
             {                   // half of table = 45 >> quart of table = 22
-                cout << ".___________________________________________________________________________________________." << endl;
-                cout << "|" << PrintNTable(45, tt.getMainGoalName(0)) << "|" << PrintNTable(45, "") << "|" << endl;
-                cout << "|_____________________________________________|" << PrintNTable(45, "") << "|" << endl;
-                cout << "|" << PrintNTable(22, tt.getGoalsTodo(0, 0)) << "|                      |" << PrintNTable(45, "") << "|" << endl;
-                cout << "|" << PrintNTable(22, tt.getGoalsTodo(0, 1)) << "|                      |_____________________________________________" << "|" << endl;
-                cout << "|" << PrintNTable(22, tt.getGoalsTodo(0, 2)) << "|                      |" << PrintNTable(45, "") << "|" << endl;
-                cout << "|" << PrintNTable(22, tt.getGoalsTodo(0, 3)) << "|                      |" << PrintNTable(45, "") << "|" << endl;
-                cout << "|" << PrintNTable(22, tt.getGoalsTodo(0, 4)) << "|                      |" << PrintNTable(45, "") << "|" << endl;
-                cout << "|" << PrintNTable(22, tt.getGoalsTodo(0, 5)) << "|                      |" << PrintNTable(45, "") << "|" << endl;
-                cout << "|" << PrintNTable(22, tt.getGoalsTodo(0, 6)) << "|                      |" << PrintNTable(45, "") << "|" << endl;
-                cout << "|" << PrintNTable(22, tt.getGoalsTodo(0, 7)) << "|                      |" << PrintNTable(45, "") << "|" << endl;
-                cout << "|" << PrintNTable(22, tt.getGoalsTodo(0, 8)) << "|                      |" << PrintNTable(45, "") << "|" << endl;
-                cout << "|_____________________________________________|" << PrintNTable(45, "") << "|" << endl;
-                cout << "|" << PrintNTable(45, tt.getMainGoalName(1)) << "|" << PrintNTable(45, "") << "|" << endl;
-                cout << "|_____________________________________________|" << PrintNTable(45, "") << "|" << endl;
-                cout << "|" << PrintNTable(22, tt.getGoalsTodo(1, 0)) << "|                      |_____________________________________________" << "|" << endl;
-                cout << "|" << PrintNTable(22, tt.getGoalsTodo(1, 1)) << "|                      | Rates:                                      " << "|" << endl;
-                cout << "|" << PrintNTable(22, tt.getGoalsTodo(1, 2)) << "|                      |" << PrintNTable(45, "") << "|" << endl;
-                cout << "|" << PrintNTable(22, tt.getGoalsTodo(1, 3)) << "|                      |" << PrintNTable(45, "") << "|" << endl;
-                cout << "|" << PrintNTable(22, tt.getGoalsTodo(1, 4)) << "|                      |" << PrintNTable(45, "") << "|" << endl;
-                cout << "|" << PrintNTable(22, tt.getGoalsTodo(1, 5)) << "|                      |" << PrintNTable(45, "") << "|" << endl;
-                cout << "|" << PrintNTable(22, tt.getGoalsTodo(1, 6)) << "|                      |_____________________________________________" << "|" << endl;
-                cout << "|" << PrintNTable(22, tt.getGoalsTodo(1, 7)) << "|                      | Notes:                                      " << "|" << endl;
-                cout << "|" << PrintNTable(22, tt.getGoalsTodo(1, 8)) << "|                      |" << PrintNTable(45, "") << "|" << endl;
-                cout << "|_____________________________________________|" << PrintNTable(45, "") << "|" << endl;
-                cout << "|" << PrintNTable(45, tt.getMainGoalName(2)) << "|" << PrintNTable(45, "") << "|" << endl;
-                cout << "|_____________________________________________|" << PrintNTable(45, "") << "|" << endl;
-                cout << "|" << PrintNTable(22, tt.getGoalsTodo(2, 0)) << "|                      |" << PrintNTable(45, "") << "|" << endl;
-                cout << "|" << PrintNTable(22, tt.getGoalsTodo(2, 1)) << "|                      |" << PrintNTable(45, "") << "|" << endl;
-                cout << "|" << PrintNTable(22, tt.getGoalsTodo(2, 2)) << "|                      |" << PrintNTable(45, "") << "|" << endl;
-                cout << "|" << PrintNTable(22, tt.getGoalsTodo(2, 3)) << "|                      |" << PrintNTable(45, "") << "|" << endl;
-                cout << "|" << PrintNTable(22, tt.getGoalsTodo(2, 4)) << "|                      |" << PrintNTable(45, "") << "|" << endl;
-                cout << "|" << PrintNTable(22, tt.getGoalsTodo(2, 5)) << "|                      |" << PrintNTable(45, "") << "|" << endl;
-                cout << "|" << PrintNTable(22, tt.getGoalsTodo(2, 6)) << "|                      |" << PrintNTable(45, "") << "|" << endl;
-                cout << "|" << PrintNTable(22, tt.getGoalsTodo(2, 7)) << "|                      |" << PrintNTable(45, "") << "|" << endl;
-                cout << "|" << PrintNTable(22, tt.getGoalsTodo(2, 8)) << "|                      |" << PrintNTable(45, "") << "|" << endl;
-                cout << "|___________________________________________________________________________________________|" << endl;
+                PrintingTable(tt);                
             }
         }
     } while (choice != 0);
@@ -196,4 +161,50 @@ string PrintNTable(int width, string s)
     int pad1 = deff/2;
     int pad2 = deff - pad1;
     return string(pad1, ' ') + s + string(pad2, ' ');
+}
+
+void PrintingTable(TimeTable tt)
+{
+    cout << ".___________________________________________________________________________________________." << endl;
+    cout << "|" << PrintNTable(45, tt.getMainGoalName(0)) << "|" << PrintNTable(45, "") << "|" << endl;
+    cout << "|_____________________________________________|" << PrintNTable(45, "") << "|" << endl;
+    cout << "|" << PrintNTable(22, tt.getGoalsTodo(0, 0)) << "|                      |" << PrintNTable(45, "") << "|" << endl;
+    cout << "|" << PrintNTable(22, tt.getGoalsTodo(0, 1)) << "|                      |_____________________________________________"
+         << "|" << endl;
+    cout << "|" << PrintNTable(22, tt.getGoalsTodo(0, 2)) << "|                      |" << PrintNTable(45, "") << "|" << endl;
+    cout << "|" << PrintNTable(22, tt.getGoalsTodo(0, 3)) << "|                      |" << PrintNTable(45, "") << "|" << endl;
+    cout << "|" << PrintNTable(22, tt.getGoalsTodo(0, 4)) << "|                      |" << PrintNTable(45, "") << "|" << endl;
+    cout << "|" << PrintNTable(22, tt.getGoalsTodo(0, 5)) << "|                      |" << PrintNTable(45, "") << "|" << endl;
+    cout << "|" << PrintNTable(22, tt.getGoalsTodo(0, 6)) << "|                      |" << PrintNTable(45, "") << "|" << endl;
+    cout << "|" << PrintNTable(22, tt.getGoalsTodo(0, 7)) << "|                      |" << PrintNTable(45, "") << "|" << endl;
+    cout << "|" << PrintNTable(22, tt.getGoalsTodo(0, 8)) << "|                      |" << PrintNTable(45, "") << "|" << endl;
+    cout << "|_____________________________________________|" << PrintNTable(45, "") << "|" << endl;
+    cout << "|" << PrintNTable(45, tt.getMainGoalName(1)) << "|" << PrintNTable(45, "") << "|" << endl;
+    cout << "|_____________________________________________|" << PrintNTable(45, "") << "|" << endl;
+    cout << "|" << PrintNTable(22, tt.getGoalsTodo(1, 0)) << "|                      |_____________________________________________"
+         << "|" << endl;
+    cout << "|" << PrintNTable(22, tt.getGoalsTodo(1, 1)) << "|                      | Rates:                                      "
+         << "|" << endl;
+    cout << "|" << PrintNTable(22, tt.getGoalsTodo(1, 2)) << "|                      |" << PrintNTable(45, "") << "|" << endl;
+    cout << "|" << PrintNTable(22, tt.getGoalsTodo(1, 3)) << "|                      |" << PrintNTable(45, "") << "|" << endl;
+    cout << "|" << PrintNTable(22, tt.getGoalsTodo(1, 4)) << "|                      |" << PrintNTable(45, "") << "|" << endl;
+    cout << "|" << PrintNTable(22, tt.getGoalsTodo(1, 5)) << "|                      |" << PrintNTable(45, "") << "|" << endl;
+    cout << "|" << PrintNTable(22, tt.getGoalsTodo(1, 6)) << "|                      |_____________________________________________"
+         << "|" << endl;
+    cout << "|" << PrintNTable(22, tt.getGoalsTodo(1, 7)) << "|                      | Notes:                                      "
+         << "|" << endl;
+    cout << "|" << PrintNTable(22, tt.getGoalsTodo(1, 8)) << "|                      |" << PrintNTable(45, "") << "|" << endl;
+    cout << "|_____________________________________________|" << PrintNTable(45, "") << "|" << endl;
+    cout << "|" << PrintNTable(45, tt.getMainGoalName(2)) << "|" << PrintNTable(45, "") << "|" << endl;
+    cout << "|_____________________________________________|" << PrintNTable(45, "") << "|" << endl;
+    cout << "|" << PrintNTable(22, tt.getGoalsTodo(2, 0)) << "|                      |" << PrintNTable(45, "") << "|" << endl;
+    cout << "|" << PrintNTable(22, tt.getGoalsTodo(2, 1)) << "|                      |" << PrintNTable(45, "") << "|" << endl;
+    cout << "|" << PrintNTable(22, tt.getGoalsTodo(2, 2)) << "|                      |" << PrintNTable(45, "") << "|" << endl;
+    cout << "|" << PrintNTable(22, tt.getGoalsTodo(2, 3)) << "|                      |" << PrintNTable(45, "") << "|" << endl;
+    cout << "|" << PrintNTable(22, tt.getGoalsTodo(2, 4)) << "|                      |" << PrintNTable(45, "") << "|" << endl;
+    cout << "|" << PrintNTable(22, tt.getGoalsTodo(2, 5)) << "|                      |" << PrintNTable(45, "") << "|" << endl;
+    cout << "|" << PrintNTable(22, tt.getGoalsTodo(2, 6)) << "|                      |" << PrintNTable(45, "") << "|" << endl;
+    cout << "|" << PrintNTable(22, tt.getGoalsTodo(2, 7)) << "|                      |" << PrintNTable(45, "") << "|" << endl;
+    cout << "|" << PrintNTable(22, tt.getGoalsTodo(2, 8)) << "|                      |" << PrintNTable(45, "") << "|" << endl;
+    cout << "|___________________________________________________________________________________________|" << endl;
 }
